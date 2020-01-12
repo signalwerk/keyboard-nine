@@ -1,7 +1,8 @@
 {
-  "name": "tastatur",
+  "name": "keyboard-nine",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://signalwerk.github.io/keyboard-nine",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
