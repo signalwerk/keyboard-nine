@@ -4,15 +4,15 @@ import {
   BLOCKS,
   BLOCK_TIMEOUT,
   ORIENTATION,
-  BLOCK_REPEAT_TIMEOUT
+  REPEAT_TIMEOUT
 } from "../settings";
 
 export const UIContext = React.createContext();
 export const UIConsumer = UIContext.Consumer;
 
 export class UIProvider extends Component {
-  // here we store the callback when a block is clicked
-  blockCallback = null;
+  // callback for some buttons
+  timedCallback = null;
 
   state = {
     text: "Hello world!\nPlease type ...",
@@ -29,7 +29,7 @@ export class UIProvider extends Component {
   };
 
   clearTimeout = () => {
-    clearTimeout(this.blockCallback);
+    clearTimeout(this.timedCallback);
   };
 
   startBlockPress = block => {
@@ -64,16 +64,16 @@ export class UIProvider extends Component {
       lastBlock: block
     });
 
-    this.blockCallback = setTimeout(() => {
+    this.timedCallback = setTimeout(() => {
       this.startBlockPress(block);
-    }, BLOCK_REPEAT_TIMEOUT);
+    }, REPEAT_TIMEOUT);
   };
 
   endBlockPress = block => {
     // nothing
     this.clearTimeout();
 
-    this.blockCallback = setTimeout(() => {
+    this.timedCallback = setTimeout(() => {
       this.setState({
         ...this.state,
 
@@ -82,7 +82,7 @@ export class UIProvider extends Component {
     }, BLOCK_TIMEOUT);
   };
 
-  backspace = () => {
+  startBackspace = () => {
     this.clearTimeout();
 
     const text = this.state.text.substring(0, this.state.text.length - 1);
@@ -91,6 +91,14 @@ export class UIProvider extends Component {
       text,
       lastBlock: null
     });
+
+    this.timedCallback = setTimeout(() => {
+      this.startBackspace();
+    }, REPEAT_TIMEOUT);
+  };
+
+  endBackspace = () => {
+    this.clearTimeout();
   };
 
   append = str => {
@@ -128,7 +136,8 @@ export class UIProvider extends Component {
           action: {
             startBlockPress: this.startBlockPress,
             endBlockPress: this.endBlockPress,
-            backspace: this.backspace,
+            startBackspace: this.startBackspace,
+            endBackspace: this.endBackspace,
             append: this.append,
             caps: this.caps,
             orientation: this.orientation

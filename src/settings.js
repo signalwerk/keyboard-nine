@@ -9,7 +9,7 @@ export const ORIENTATION = {
 };
 
 export const BLOCK_TIMEOUT = 400;
-export const BLOCK_REPEAT_TIMEOUT = 300;
+export const REPEAT_TIMEOUT = 300;
 
 export const BLOCKS = {
   block01: {

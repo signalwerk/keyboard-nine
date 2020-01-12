@@ -23,7 +23,8 @@ function Keyboard() {
               <Fragment>
                 <Button
                   className="Button--startRow"
-                  onEnd={e => context.action.backspace()}
+                  onStart={e => context.action.startBackspace()}
+                  onEnd={e => context.action.endBackspace()}
                   label="⌫"
                 ></Button>
                 <Button
@@ -74,7 +75,8 @@ function Keyboard() {
                   label="Space"
                 ></Button>
                 <Button
-                  onEnd={e => context.action.backspace()}
+                  onStart={e => context.action.startBackspace()}
+                  onEnd={e => context.action.endBackspace()}
                   label="⌫"
                 ></Button>
 
