@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/keyboard-nine/static/css/main.4fd83121.chunk.css",
-    "main.js": "/keyboard-nine/static/js/main.7a686295.chunk.js",
-    "main.js.map": "/keyboard-nine/static/js/main.7a686295.chunk.js.map",
+    "main.css": "/keyboard-nine/static/css/main.d04cc101.chunk.css",
+    "main.js": "/keyboard-nine/static/js/main.f0358637.chunk.js",
+    "main.js.map": "/keyboard-nine/static/js/main.f0358637.chunk.js.map",
     "runtime-main.js": "/keyboard-nine/static/js/runtime-main.97afe163.js",
     "runtime-main.js.map": "/keyboard-nine/static/js/runtime-main.97afe163.js.map",
     "static/js/2.908aeea9.chunk.js": "/keyboard-nine/static/js/2.908aeea9.chunk.js",
     "static/js/2.908aeea9.chunk.js.map": "/keyboard-nine/static/js/2.908aeea9.chunk.js.map",
     "index.html": "/keyboard-nine/index.html",
-    "precache-manifest.272da17c50b7e7547c9f974c1ccb0197.js": "/keyboard-nine/precache-manifest.272da17c50b7e7547c9f974c1ccb0197.js",
+    "precache-manifest.b2a77e5c7e71b14c2ccdf508eaa1cf6a.js": "/keyboard-nine/precache-manifest.b2a77e5c7e71b14c2ccdf508eaa1cf6a.js",
     "service-worker.js": "/keyboard-nine/service-worker.js",
-    "static/css/main.4fd83121.chunk.css.map": "/keyboard-nine/static/css/main.4fd83121.chunk.css.map",
+    "static/css/main.d04cc101.chunk.css.map": "/keyboard-nine/static/css/main.d04cc101.chunk.css.map",
     "static/js/2.908aeea9.chunk.js.LICENSE": "/keyboard-nine/static/js/2.908aeea9.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.97afe163.js",
     "static/js/2.908aeea9.chunk.js",
-    "static/css/main.4fd83121.chunk.css",
-    "static/js/main.7a686295.chunk.js"
+    "static/css/main.d04cc101.chunk.css",
+    "static/js/main.f0358637.chunk.js"
   ]
 }
