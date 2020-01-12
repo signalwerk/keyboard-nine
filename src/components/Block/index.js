@@ -9,8 +9,8 @@ function Block({ id, className }) {
     <UIConsumer>
       {context => (
         <Button
-          onMouseDown={e => context.action.startBlockPress(id)}
-          onMouseUp={e => context.action.endBlockPress(id)}
+          onStart={e => context.action.startBlockPress(id)}
+          onEnd={e => context.action.endBlockPress(id)}
           label={BLOCKS[id].label[context.typeMode]}
           className={`${className} Button--block`}
         ></Button>

@@ -23,30 +23,30 @@ function Keyboard() {
               <Fragment>
                 <Button
                   className="Button--startRow"
-                  onMouseUp={e => context.action.backspace()}
+                  onEnd={e => context.action.backspace()}
                   label="⌫"
                 ></Button>
                 <Button
-                  onMouseUp={e => context.action.append(" ")}
+                  onEnd={e => context.action.append(" ")}
                   label="Space"
                 ></Button>
                 <Block id="block07" width="large" />
 
                 <Button
                   className="Button--startRow Button--negative"
-                  onMouseUp={e => context.action.orientation(ORIENTATION.L)}
+                  onEnd={e => context.action.orientation(ORIENTATION.L)}
                   label="L"
                   active={context.orientation === ORIENTATION.L}
                   width="small"
                   heigh="small"
                 ></Button>
                 <Button
-                  onMouseUp={e => context.action.append("\n")}
+                  onEnd={e => context.action.append("\n")}
                   label=" ‎⏎"
                   heigh="small"
                 ></Button>
                 <Button
-                  onMouseUp={e => context.action.caps()}
+                  onEnd={e => context.action.caps()}
                   label="⇪"
                   active={context.typeMode === TYPEMODE.CAP}
                   width="small"
@@ -55,7 +55,7 @@ function Keyboard() {
                 <Button label="🌐" width="small" heigh="small"></Button>
                 <Button
                   className="Button--negative"
-                  onMouseUp={e => context.action.orientation(ORIENTATION.R)}
+                  onEnd={e => context.action.orientation(ORIENTATION.R)}
                   label="R"
                   active={context.orientation === ORIENTATION.R}
                   width="small"
@@ -70,17 +70,17 @@ function Keyboard() {
                   width="large"
                 />
                 <Button
-                  onMouseUp={e => context.action.append(" ")}
+                  onEnd={e => context.action.append(" ")}
                   label="Space"
                 ></Button>
                 <Button
-                  onMouseUp={e => context.action.backspace()}
+                  onEnd={e => context.action.backspace()}
                   label="⌫"
                 ></Button>
 
                 <Button
                   className="Button--startRow Button--negative"
-                  onMouseUp={e => context.action.orientation(ORIENTATION.L)}
+                  onEnd={e => context.action.orientation(ORIENTATION.L)}
                   label="L"
                   active={context.orientation === ORIENTATION.L}
                   width="small"
@@ -88,21 +88,21 @@ function Keyboard() {
                 ></Button>
                 <Button label="🌐" width="small" heigh="small"></Button>
                 <Button
-                  onMouseUp={e => context.action.caps()}
+                  onEnd={e => context.action.caps()}
                   label="⇪"
                   active={context.typeMode === TYPEMODE.CAP}
                   width="small"
                   heigh="small"
                 ></Button>
                 <Button
-                  onMouseUp={e => context.action.append("\n")}
+                  onEnd={e => context.action.append("\n")}
                   label=" ‎⏎"
                   heigh="small"
                 ></Button>
 
                 <Button
                   className="Button--negative"
-                  onMouseUp={e => context.action.orientation(ORIENTATION.R)}
+                  onEnd={e => context.action.orientation(ORIENTATION.R)}
                   label="R"
                   active={context.orientation === ORIENTATION.R}
                   width="small"
