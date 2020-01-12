@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { TYPEMODE, BLOCKS, BLOCK_TIMEOUT, ORIENTATION } from "../settings";
+import {
+  TYPEMODE,
+  BLOCKS,
+  BLOCK_TIMEOUT,
+  ORIENTATION,
+  BLOCK_REPEAT_TIMEOUT
+} from "../settings";
 
 export const UIContext = React.createContext();
 export const UIConsumer = UIContext.Consumer;
@@ -57,6 +63,10 @@ export class UIProvider extends Component {
       blockCharIndex,
       lastBlock: block
     });
+
+    this.blockCallback = setTimeout(() => {
+      this.startBlockPress(block);
+    }, BLOCK_REPEAT_TIMEOUT);
   };
 
   endBlockPress = block => {
