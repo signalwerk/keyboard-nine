@@ -5,7 +5,8 @@ import {
   BLOCK_TIMEOUT,
   ORIENTATION,
   REPEAT_TIMEOUT,
-  KEYBOARD
+  KEYBOARD,
+  KEYS
 } from "../settings";
 
 export const UIContext = React.createContext();
@@ -34,6 +35,21 @@ export class UIProvider extends Component {
 
   clearTimeout = () => {
     clearTimeout(this.timedCallback);
+  };
+
+  startKeyPress = key => {
+    this.clearTimeout();
+
+    const text = this.state.text + KEYS[key].value[this.state.typeMode];
+    this.setState({
+      ...this.state,
+      typeMode:
+        this.state.typeMode === TYPEMODE.CAP
+          ? TYPEMODE.NORMAL
+          : this.state.typeMode,
+      text,
+      lastBlock: null
+    });
   };
 
   startBlockPress = block => {
@@ -116,15 +132,18 @@ export class UIProvider extends Component {
     });
   };
 
-  caps = () => {
+  setTypeMode = mode => {
+    this.clearTimeout();
+
     this.setState({
       ...this.state,
-      typeMode:
-        this.state.typeMode === TYPEMODE.NORMAL ? TYPEMODE.CAP : TYPEMODE.NORMAL
+      typeMode: mode
     });
   };
 
   orientation = orientation => {
+    this.clearTimeout();
+
     this.setState({
       ...this.state,
       orientation
@@ -132,8 +151,11 @@ export class UIProvider extends Component {
   };
 
   setKeyboardStyle = keyboardStyle => {
+    this.clearTimeout();
+
     this.setState({
       ...this.state,
+      typeMode: TYPEMODE.NORMAL,
       keyboardStyle
     });
   };
@@ -147,10 +169,13 @@ export class UIProvider extends Component {
           action: {
             startBlockPress: this.startBlockPress,
             endBlockPress: this.endBlockPress,
+
+            startKeyPress: this.startKeyPress,
+
             startBackspace: this.startBackspace,
             endBackspace: this.endBackspace,
             append: this.append,
-            caps: this.caps,
+            setTypeMode: this.setTypeMode,
             orientation: this.orientation,
             setKeyboardStyle: this.setKeyboardStyle
           }

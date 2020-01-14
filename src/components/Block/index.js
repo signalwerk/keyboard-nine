@@ -9,10 +9,11 @@ function Block({ id, className }) {
     <UIConsumer>
       {context => (
         <Button
+          className={`${className ? `${className} ` : ""}Button--block`}
           onStart={e => context.action.startBlockPress(id)}
           onEnd={e => context.action.endBlockPress(id)}
           label={BLOCKS[id].label[context.typeMode]}
-          className={`${className} Button--block`}
+          width="1-3"
         ></Button>
       )}
     </UIConsumer>

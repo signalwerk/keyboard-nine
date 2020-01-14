@@ -1,25 +1,35 @@
 .Button {
   border: 0;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-
   margin: 0;
   padding: 0;
   font: inherit;
-  width: 33.3333%;
   height: 4rem;
   background-color: white;
-
+  line-height: 1;
   touch-action: none;
+  overflow: hidden;
+  display: block;
 }
 
 button.Button:focus {
   outline: 0;
 }
 
-.Button--startRow {
-  border-left: none;
+.Button--borderTop {
+  border-top: 2px solid #ddd;
 }
+
+.Button--borderTopBlack {
+  border-top: 2px solid black;
+}
+
+.Button--borderLeft {
+  border-left: 2px solid #ddd;
+}
+
+/* .Button--startRow {
+  border-left: none;
+} */
 
 .Button--active {
   background-color: var(--primary-color);
@@ -30,10 +40,39 @@ button.Button:focus {
   color: white;
 }
 
-.Button--width-small {
-  width: 16.66666%;
+.Button--width-1-3 {
+  width: calc(100% / 3);
+}
+
+.Button--width-1-6 {
+  width: calc(100% / 6);
+}
+
+.Button--width-1-8 {
+  width: calc(100% / 8);
+}
+
+.Button--width-3-16 {
+  width: calc(100% * 3 / 16);
+}
+
+.Button--width-9-16 {
+  width: calc(100% * 9 / 16);
 }
 
 .Button--heigh-small {
   height: 2.5rem;
+}
+
+.Button--heigh-med {
+  height: 3.4rem;
+}
+
+.Button--font-big {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.Button--clicked-yes {
+  background-color: var(--primary-color);
 }

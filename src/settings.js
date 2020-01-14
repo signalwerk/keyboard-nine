@@ -1,11 +1,12 @@
 export const TYPEMODE = {
   NORMAL: "normal",
-  CAP: "cap"
+  CAP: "cap",
+  PUNCTUATION: "punct"
 };
 
 export const KEYBOARD = {
   NINE: "nine",
-  OTHER: "other"
+  CLASSIC: "classic"
 };
 
 export const ORIENTATION = {
@@ -15,6 +16,31 @@ export const ORIENTATION = {
 
 export const BLOCK_TIMEOUT = 400;
 export const REPEAT_TIMEOUT = 300;
+
+// to keep everything super configurable
+const keyReducer = (accumulator, currentChar, index) => {
+  const upperChar = currentChar.toUpperCase();
+  return {
+    ...accumulator,
+    [`key${upperChar}`]: {
+      label: {
+        normal: currentChar,
+        cap: upperChar,
+        punct: PUNCTUATION[index]
+      },
+      value: {
+        normal: currentChar,
+        cap: upperChar,
+        punct: PUNCTUATION[index]
+      }
+    }
+  };
+};
+
+const PUNCTUATION = "0123456789.:;?!/(){}&%+-$§".split("");
+export const KEYS = "qzdpjgwbycnlustmxfoaeihrvk"
+  .split("")
+  .reduce(keyReducer, {});
 
 export const BLOCKS = {
   block01: {
