@@ -1,6 +1,6 @@
-.Keyboard {
+.KeyboardNine {
 }
-.Keyboard__main {
+.KeyboardNine__main {
   display: flex;
   flex-wrap: wrap;
 }

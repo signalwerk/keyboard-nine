@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles.css";
 import Text from "../Text";
-import Keyboard from "../Keyboard";
+import KeyboardNine from "../KeyboardNine";
+import { KEYBOARD } from "../../settings";
 
 import { UIProvider, UIConsumer } from "../../store";
 
@@ -15,7 +16,12 @@ function App() {
               <Text context={context} />
             </div>
             <div className="App__keyboard">
-              <Keyboard />
+              {context.keyboardStyle === KEYBOARD.NINE ? (
+                <KeyboardNine />
+              ) : null}
+              {context.keyboardStyle === KEYBOARD.OTHER ? (
+                <KeyboardNine />
+              ) : null}
             </div>
           </div>
         )}

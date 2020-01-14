@@ -2,16 +2,16 @@ import React, { Fragment } from "react";
 import "./styles.css";
 import Block from "../Block";
 import Button from "../Button";
-import { TYPEMODE, ORIENTATION } from "../../settings";
+import { TYPEMODE, ORIENTATION, KEYBOARD } from "../../settings";
 
 import { UIConsumer } from "../../store";
 
-function Keyboard() {
+function KeyboardNine() {
   return (
     <UIConsumer>
       {context => (
-        <div className="Keyboard">
-          <div className="Keyboard__main">
+        <div className="KeyboardNine">
+          <div className="KeyboardNine__main">
             <Block className="Button--startRow" id="block01" />
             <Block id="block02" width="large" />
             <Block id="block03" width="large" />
@@ -88,7 +88,12 @@ function Keyboard() {
                   width="small"
                   heigh="small"
                 ></Button>
-                <Button label="🌐" width="small" heigh="small"></Button>
+                <Button
+                  label="🌐"
+                  width="small"
+                  heigh="small"
+                  onEnd={e => context.action.setKeyboardStyle(KEYBOARD.OTHER)}
+                ></Button>
                 <Button
                   onEnd={e => context.action.caps()}
                   label="⇪"
@@ -119,4 +124,4 @@ function Keyboard() {
   );
 }
 
-export default Keyboard;
+export default KeyboardNine;

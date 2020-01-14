@@ -3,6 +3,11 @@ export const TYPEMODE = {
   CAP: "cap"
 };
 
+export const KEYBOARD = {
+  NINE: "nine",
+  OTHER: "other"
+};
+
 export const ORIENTATION = {
   R: "r",
   L: "l"

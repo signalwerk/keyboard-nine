@@ -4,7 +4,8 @@ import {
   BLOCKS,
   BLOCK_TIMEOUT,
   ORIENTATION,
-  REPEAT_TIMEOUT
+  REPEAT_TIMEOUT,
+  KEYBOARD
 } from "../settings";
 
 export const UIContext = React.createContext();
@@ -16,6 +17,9 @@ export class UIProvider extends Component {
 
   state = {
     text: "Hello world!\nPlease type ...",
+
+    keyboardStyle: KEYBOARD.NINE,
+
     orientation: ORIENTATION.R,
 
     typeMode: TYPEMODE.NORMAL, // are we in normal writing or cap
@@ -127,6 +131,13 @@ export class UIProvider extends Component {
     });
   };
 
+  setKeyboardStyle = keyboardStyle => {
+    this.setState({
+      ...this.state,
+      keyboardStyle
+    });
+  };
+
   render() {
     return (
       <UIContext.Provider
@@ -140,7 +151,8 @@ export class UIProvider extends Component {
             endBackspace: this.endBackspace,
             append: this.append,
             caps: this.caps,
-            orientation: this.orientation
+            orientation: this.orientation,
+            setKeyboardStyle: this.setKeyboardStyle
           }
         }}
       >
