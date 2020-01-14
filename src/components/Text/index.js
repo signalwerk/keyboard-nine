@@ -14,7 +14,7 @@ let lastLine = text => {
   return (
     <Fragment>
       {replaceSpacesWithNbsp(textMinusLast)}
-      <span className="Text__lastChar">{lastChar}</span>
+      <span className="Text__lastChar">{replaceSpacesWithNbsp(lastChar)}</span>
       <span className="Text__cursor"></span>
     </Fragment>
   );
