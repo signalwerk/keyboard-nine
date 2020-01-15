@@ -33,20 +33,20 @@ function Button({ label, onStart, onEnd, active, width, heigh, className }) {
       onTouchStart={e => {
         if (onStart) {
           onStart(e);
-          e.preventDefault();
         }
         setClicked(true);
+        e.preventDefault();
       }}
       onTouchEnd={e => {
         if (onEnd) {
           onEnd(e);
-          e.preventDefault();
         }
         setTimeout(() => {
           if (isMounted.current) {
             setClicked(false);
           }
         }, 100);
+        e.preventDefault();
       }}
     >
       {label}
